@@ -1,8 +1,6 @@
 package com.example.movies.user;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,10 +21,7 @@ private final UserService userService;
         return userService.getAllUsers();
 
     }
-//    @GetMapping("/admin")
-//    public String loginForm(Model model){
-//        return "login";
-//    }
+
 //    @PostMapping("/admin")
 //    public String processLoginForm(@RequestParam String username, @RequestParam String password, Model model,User user) {
 //        boolean isValid = userService.authenticate(username, password);

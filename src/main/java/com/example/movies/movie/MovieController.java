@@ -1,5 +1,6 @@
 package com.example.movies.movie;
 
+import com.example.movies.authorization.LogInHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -32,6 +33,20 @@ public class MovieController {
 //      return   movieService.getAllMovies();
 //    }
 
+    @GetMapping("/admin")
+    public String panel(Model model){
+        if(LogInHelper.getInstance().isAdmin()) {
+            return "admin";
+        }
+        return "login";
+    }
+    @GetMapping("/admin/add")
+    public String addMovie(Model model){
+        if(LogInHelper.getInstance().isAdmin()) {
+            return "add";
+        }
+        return "login";
+    }
     @GetMapping("/movies")
     public String getAllMovies(Model model){
         List<Movie> movies = movieService.getAllMovies();

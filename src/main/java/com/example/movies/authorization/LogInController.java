@@ -1,6 +1,8 @@
-package com.example.movies.user;
+package com.example.movies.authorization;
 
 
+import com.example.movies.user.User;
+import com.example.movies.user.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +16,7 @@ public class LogInController {
     }
 
     @PostMapping("/login")
-    public String processLoginForm(@ModelAttribute("user") User user,Model model) {
+    public String processLoginForm(@ModelAttribute("user") User user, Model model) {
 
         boolean isUsernameEmpty = userService.isUsernameEmpty(user);
         boolean isPasswordEmpty = userService.isPasswordEmpty(user);
@@ -38,7 +40,7 @@ public class LogInController {
         boolean isUserAuthenticated = userService.authenticate(user);
 
         if (isUserAuthenticated) {
-            return "redirect:/";
+            return "redirect:/admin";
         } else {
             model.addAttribute("error", "Incorrect Username or Password");
             return "login";

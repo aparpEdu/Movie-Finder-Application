@@ -1,12 +1,11 @@
 package com.example.movies.user;
 
+import com.example.movies.authorization.LogInHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import java.net.PasswordAuthentication;
 import java.util.List;
 import java.util.Optional;
 
@@ -31,6 +30,7 @@ public class UserService {
        if(findUser.isEmpty()){
             return false;
         }
+       LogInHelper.getInstance().setAdmin(true);
         return true;
     }
     public boolean isUsernameEmpty(User user){
