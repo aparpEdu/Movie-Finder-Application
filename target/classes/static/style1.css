@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap%27%27');
+/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap%27%27');*/
 
 header {
     background-color: #232323;
@@ -154,7 +154,7 @@ a:active {
 
 body {
     line-height: 1.5;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'oaks_future_V3', sans-serif;
 }
 
 * {
@@ -185,8 +185,8 @@ ul {
 }
 
 .footer-col {
-   width: 50%;
-   padding: 0 15px;
+    width: 25%;
+    padding: 0 15px;
 }
 
 .row {
@@ -253,15 +253,15 @@ ul {
 }
 
 @media(max-width: 767px){
-  .footer-col {
-    width: 50%;
-    margin-bottom: 30px;
-}
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
 }
 @media(max-width: 574px){
-  .footer-col {
-    width: 100%;
-}
+    .footer-col {
+        width: 100%;
+    }
 }
 
 /* CSS for Footer ends here */
@@ -270,11 +270,11 @@ ul {
 
 @font-face {
     font-family: 'oaks_future_V3';
-    src: url('oaks_future_V3-BoldRegular.eot');
-    src: url('oaks_future_V3-BoldRegular.eot?#iefix') format('embedded-opentype'),
-        url('oaks_future_V3-BoldRegular.woff2') format('woff2'),
-        url('oaks_future_V3-BoldRegular.woff') format('woff'),
-        url('oaks_future_V3-BoldRegular.svg#oaks_future_V3-BoldRegular') format('svg');
+    src: url('/fonts/oaks_future_V3-BoldRegular.eot');
+    src: url('/fonts/oaks_future_V3-BoldRegular.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/oaks_future_V3-BoldRegular.woff2') format('woff2'),
+    url('/fonts/oaks_future_V3-BoldRegular.woff') format('woff'),
+    url('/fonts/oaks_future_V3-BoldRegular.svg#oaks_future_V3-BoldRegular') format('svg');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -282,18 +282,18 @@ ul {
 
 @font-face {
     font-family: 'oaks_future_V3';
-    src: url('oaks_future_V3-BoldRegular.eot');
-    src: url('oaks_future_V3-BoldRegular.eot?#iefix') format('embedded-opentype'),
-        url('oaks_future_V3-BoldRegular.woff2') format('woff2'),
-        url('oaks_future_V3-BoldRegular.woff') format('woff'),
-        url('oaks_future_V3-BoldRegular.svg#oaks_future_V3-BoldRegular') format('svg');
+    src: url('/fonts/oaks_future_V3-BoldRegular.eot');
+    src: url('/fonts/oaks_future_V3-BoldRegular.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/oaks_future_V3-BoldRegular.woff2') format('woff2'),
+    url('/fonts/oaks_future_V3-BoldRegular.woff') format('woff'),
+    url('/fonts/oaks_future_V3-BoldRegular.svg#oaks_future_V3-BoldRegular') format('svg');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
 }
 
 :root {
-    font-family: "oaks_future_V3",sans-serif;
+    font-family: 'oaks_future_V3',sans-serif;
 }
 
 /* CSS for custom font ends here */
