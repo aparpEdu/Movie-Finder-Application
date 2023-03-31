@@ -17,10 +17,10 @@ public class MovieController {
         this.movieService = movieService;
     }
 
-    @PostMapping
-    public void addMovie(@RequestBody Movie movie) throws IllegalAccessException{
-        movieService.addNewMovie(movie);
-    }
+//    @PostMapping
+//    public void addMovie(@RequestBody Movie movie) throws IllegalAccessException{
+//        movieService.addNewMovie(movie);
+//    }
 
     @GetMapping("/")
     public String home(Model model){
@@ -41,11 +41,16 @@ public class MovieController {
         return "login";
     }
     @GetMapping("/admin/add")
-    public String addMovie(Model model){
+    public String addMoviePage(Model model){
         if(LogInHelper.getInstance().isAdmin()) {
             return "add";
         }
         return "login";
+    }
+    @PostMapping ("/admin/add")
+    public String addMovie(@ModelAttribute("movie") Movie movie,Model model) throws IllegalAccessException {
+       movieService.addNewMovie(movie);
+        return "add";
     }
     @GetMapping("/movies")
     public String getAllMovies(Model model){

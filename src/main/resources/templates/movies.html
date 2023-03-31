@@ -1,22 +1,42 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Movies</title>
+  <title>All Movies</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/movies-style.css}">
 </head>
 <body>
-<h1>Movies</h1>
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Director</th>
-    <th>Year</th>
-  </tr>
-  <tr th:each="movie : ${movies}">
-    <td th:text="${movie.title}"></td>
-    <td th:text="${movie.description}"></td>
-    <td th:text="${movie.year}"></td>
-  </tr>
-</table>
+<div class="logo-wrapper">
+  <a th:href="@{/}"> <img class="logo" th:src="@{/images/logo-proekta.png}" alt="Project Logo" ></a>
+</div>
+<div class="container">
+  <h1>All Movies</h1>
+  <table>
+    <thead>
+    <tr>
+      <th>Title</th>
+      <th>Actors</th>
+      <th>Year</th>
+      <th>Genres</th>
+      <th>Description</th>
+      <th>Length</th>
+      <th>Poster</th>
+      <th>Director</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="movie : ${movies}">
+      <td th:text="${movie.title}"></td>
+      <td th:text="${movie.actors}"></td>
+      <td th:text="${movie.year}"></td>
+      <td th:text="${movie.genre}"></td>
+      <td th:text="${movie.description}"></td>
+      <td th:text="${movie.length}"></td>
+      <td><img th:src="${movie.poster}" width="100"></td>
+      <td th:text="${movie.director}"></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
 </body>
 </html>
