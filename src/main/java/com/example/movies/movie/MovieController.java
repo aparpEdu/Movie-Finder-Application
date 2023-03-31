@@ -58,5 +58,11 @@ public class MovieController {
         model.addAttribute("movies", movies);
         return "movies";
     }
+    @GetMapping("/movie")
+    public String getAllMovies2(Model model){
+        List<Movie> movies = movieService.getAllMovies();
+        model.addAttribute("movies", movies);
+        return "movie";
+    }
 
 }
