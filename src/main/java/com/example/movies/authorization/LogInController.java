@@ -50,6 +50,7 @@ public class LogInController {
     }
         @GetMapping("/login")
     public String loginForm(Model model){
+        LogInHelper.getInstance().setAdmin(false);
         return "login";
     }
 }
