@@ -32,6 +32,15 @@ public class MovieService {
     }
 
     @GetMapping
+    public List<Movie> getMovieByTitle(String title){
+//        return movieRepository.findMoviesByTitleContaining(title);
+        return movieRepository.findByTitleIgnoreCaseContaining(title);
+    }
+    @GetMapping
+    public List<Movie> getMoviesByYear(Integer year){
+        return  movieRepository.findMoviesByYear(year);
+    }
+    @GetMapping
     public List<Movie> getAllMovies(){
         return movieRepository.findAll();
     }

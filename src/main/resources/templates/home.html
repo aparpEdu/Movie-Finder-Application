@@ -16,16 +16,15 @@
     </a>
   </div>
   <div class="search">
-    <form>
-      <select>
-        <option value="titles">Titles</option>
-        <option value="celebs">Celebs</option>
-        <option value="companies">Companies</option>
-        <option value="keywords">Keywords</option>
-      </select>
-      <input type="text" placeholder="Search titles, celebs, and more">
-      <button type="submit">Search</button>
-    </form>
+      <form th:action="@{/movies/search}" method="GET">
+          <select name="selectedCategory" id="selectedCategory">
+              <option value="title">Title</option>
+              <option value="genre">Genre</option>
+              <option value="year">Year</option>
+          </select>
+          <input type="text" name="searchValue" id="searchValue" placeholder="Search...">
+          <button type="submit">Search</button>
+      </form>
   </div>
   </div>
 </header>
