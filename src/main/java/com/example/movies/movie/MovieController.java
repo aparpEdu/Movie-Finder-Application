@@ -1,9 +1,13 @@
 package com.example.movies.movie;
 
 import com.example.movies.authorization.LogInHelper;
+import com.example.movies.genre.Genres;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -52,17 +56,28 @@ public class MovieController {
        movieService.addNewMovie(movie);
         return "add";
     }
+
     @GetMapping("/movies")
     public String getAllMovies(Model model){
         List<Movie> movies = movieService.getAllMovies();
         model.addAttribute("movies", movies);
-        return "movies";
+        return "movie";
     }
-    @GetMapping("/movie")
-    public String getAllMovies2(Model model){
-        List<Movie> movies = movieService.getAllMovies();
+
+//    @GetMapping("/movies/{genre}")
+//    public String getMovieByGenre(@PathVariable String genre, Model model) {
+//        String genreName = genre.substring(0, 1).toUpperCase() + genre.substring(1).toLowerCase();
+//        List<Movie> movies = movieService.getMovieByGenre(Genres.valueOf(genreName));
+//        model.addAttribute("movies", movies);
+//        return "movie";
+//    }
+    @GetMapping("/movies/{genre}")
+    public String getMovieByGenre(@PathVariable String genre, Model model) {
+        String genreName = genre.substring(0, 1).toUpperCase() + genre.substring(1).replace(" ", "");
+        List<Movie> movies = movieService.getMovieByGenre(Genres.valueOf(genreName));
         model.addAttribute("movies", movies);
         return "movie";
     }
+
 
 }

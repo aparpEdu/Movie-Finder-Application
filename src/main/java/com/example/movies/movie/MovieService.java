@@ -1,8 +1,8 @@
 package com.example.movies.movie;
 
 
+import com.example.movies.genre.Genres;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -24,6 +24,11 @@ public class MovieService {
             throw new IllegalAccessException("A film with this title already exist in the database!");
         }
         movieRepository.save(movie);
+    }
+    @GetMapping
+    public List<Movie> getMovieByGenre(Genres genre){
+        return  movieRepository.findMoviesByGenreContains(genre);
+
     }
 
     @GetMapping

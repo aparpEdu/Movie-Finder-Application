@@ -14,7 +14,8 @@ public enum Genres {
     Adventure,
     Fantasy,
     Documentary,
-    SuperHero
+    SuperHero,
+    ActionComedy
 
 
 }
