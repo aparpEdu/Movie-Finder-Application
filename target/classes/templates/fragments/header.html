@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <link th:href="@{/css/header-style.css}"  type="text/css" rel="stylesheet" />
+</head>
+<body>
+<header>
+  <div class ="container">
+    <div class="logo">
+      <a href="#" class="logo-container">
+        <img th:src="@{/images/logo-proekta.png}" alt="Site Logo">
+        <span class = "logo-text">FFMovies</span>
+      </a>
+    </div>
+    <div class="search">
+      <form th:action="@{/movies/search}" method="GET">
+        <select name="selectedCategory" id="selectedCategory">
+          <option value="title">Title</option>
+          <option value="genre">Genre</option>
+          <option value="year">Year</option>
+        </select>
+        <input type="text" name="searchValue" id="searchValue" placeholder="Search...">
+        <button type="submit" class="button">Search</button>
+      </form>
+    </div>
+  </div>
+</header>
+</body>
