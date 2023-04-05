@@ -18,10 +18,7 @@ public class MovieController {
         this.movieService = movieService;
     }
 
-//    @PostMapping
-//    public void addMovie(@RequestBody Movie movie) throws IllegalAccessException{
-//        movieService.addNewMovie(movie);
-//    }
+
 
     @GetMapping("/")
     public String home(Model model){
@@ -29,10 +26,6 @@ public class MovieController {
         return "home";
     }
 
-//    @GetMapping
-//    public ResponseEntity<List<Movie>> getAllMovies(){
-//      return   movieService.getAllMovies();
-//    }
 
     @GetMapping("/admin")
     public String panel(Model model){
