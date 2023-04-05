@@ -64,17 +64,21 @@ public class MovieController {
     @GetMapping("/movies/search")
     public String getMovieByCategory(Model model,
                                      @RequestParam("selectedCategory") String selectedCategory,
-                                     @RequestParam("searchValue") String searchValue) {
-        String genreName = searchValue.substring(0, 1).toUpperCase() + searchValue.substring(1).replace(" ", "");
+                                     @RequestParam(name = "searchValue", required = false) String searchValue) {
         List<Movie> movies = null;
-        if (selectedCategory.equals("title")) {
-            movies = movieService.getMovieByTitle(searchValue);
-        } else if (selectedCategory.equals("genre")) {
-            movies = movieService.getMovieByGenre(Genres.valueOf(genreName));
-        } else if (selectedCategory.equals("year")) {
-            movies = movieService.getMoviesByYear(Integer.parseInt(searchValue));
-        } else {
+        if (searchValue == null || searchValue.isBlank()) {
             movies = movieService.getAllMovies();
+        } else {
+            String genreName = searchValue.substring(0, 1).toUpperCase() + searchValue.substring(1).replace(" ", "");
+            if (selectedCategory.equals("title")) {
+                movies = movieService.getMovieByTitle(searchValue);
+            } else if (selectedCategory.equals("genre")) {
+                movies = movieService.getMovieByGenre(Genres.valueOf(genreName));
+            } else if (selectedCategory.equals("year")) {
+                movies = movieService.getMoviesByYear(Integer.parseInt(searchValue));
+            } else {
+                movies = movieService.getAllMovies();
+            }
         }
         model.addAttribute("movies", movies);
         return "movie";
