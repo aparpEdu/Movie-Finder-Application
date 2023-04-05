@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <title>Movie List</title>
   <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css}">
-  <link rel="stylesheet" type="text/css" th:href="@{/css/movie-list-style.css}">
+  <link rel="stylesheet"  th:href="@{/css/movie-list-style.css}">
+  <link th:href="@{/css/footer-style.css}"  type="text/css" rel="stylesheet" />
+  <link th:href="@{/css/header-style.css}"  type="text/css" rel="stylesheet" />
   <link rel="icon" type="image/x-icon" th:href="@{/images/logo-proekta.png}">
 </head>
 <body>
@@ -14,28 +16,29 @@
 <!--  <a href="#contact">Contact</a>-->
 <!--  <input type="text" placeholder="Search...">-->
 <!--</div>-->
-<header>
-  <div class ="container2">
-    <div class="logo">
-      <a th:href="@{/}" class="logo-container">
-        <img th:src="@{/images/logo-proekta.png}" alt="Site Logo">
-        <span class = "logo-text">FFMovies</span>
-      </a>
-    </div>
-    <div class="search">
-      <form>
-        <select>
-          <option value="titles">Titles</option>
-          <option value="celebs">Celebs</option>
-          <option value="companies">Companies</option>
-          <option value="keywords">Keywords</option>
-        </select>
-        <input type="text" placeholder="Search titles, celebs, and more">
-        <button type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</header>
+<!--<header>-->
+<!--  <div class ="container2">-->
+<!--    <div class="logo">-->
+<!--      <a th:href="@{/}" class="logo-container">-->
+<!--        <img th:src="@{/images/logo-proekta.png}" alt="Site Logo">-->
+<!--        <span class = "logo-text">FFMovies</span>-->
+<!--      </a>-->
+<!--    </div>-->
+<!--    <div class="search">-->
+<!--      <form>-->
+<!--        <select>-->
+<!--          <option value="titles">Titles</option>-->
+<!--          <option value="celebs">Celebs</option>-->
+<!--          <option value="companies">Companies</option>-->
+<!--          <option value="keywords">Keywords</option>-->
+<!--        </select>-->
+<!--        <input type="text" placeholder="Search titles, celebs, and more">-->
+<!--        <button type="submit">Search</button>-->
+<!--      </form>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</header>-->
+<div th:replace="fragments/header :: header"></div>
 <div class="container">
   <h1>Movie List</h1>
   <div class="movie-list">
@@ -54,6 +57,9 @@
       </div>
     </div>
   </div>
+</div>
+<div th:replace="fragments/footer :: footer">
+  <link th:href="@{/css/footer-style.css}" rel="stylesheet" />
 </div>
 </body>
 </html>
