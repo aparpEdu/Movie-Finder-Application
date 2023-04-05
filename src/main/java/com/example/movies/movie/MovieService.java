@@ -44,4 +44,26 @@ public class MovieService {
     public List<Movie> getAllMovies(){
         return movieRepository.findAll();
     }
+
+    @GetMapping
+    public Optional<Movie> getMovieById(Long id){
+        return  movieRepository.findById(id);
+    }
+    public void editMovie(Movie updatedMovie) {
+        Optional<Movie> existingMovie = getMovieById(updatedMovie.getId());
+        if (existingMovie.isPresent()) {
+            Movie movieToUpdate = existingMovie.get();
+            movieToUpdate.setTitle(updatedMovie.getTitle());
+            movieToUpdate.setActors(updatedMovie.getActors());
+            movieToUpdate.setYear(updatedMovie.getYear());
+            movieToUpdate.setGenre(updatedMovie.getGenre());
+            movieToUpdate.setDescription(updatedMovie.getDescription());
+            movieToUpdate.setLength(updatedMovie.getLength());
+            movieToUpdate.setPoster(updatedMovie.getPoster());
+            movieToUpdate.setDirector(updatedMovie.getDirector());
+            movieRepository.save(movieToUpdate);
+        }
+    }
+
+
 }

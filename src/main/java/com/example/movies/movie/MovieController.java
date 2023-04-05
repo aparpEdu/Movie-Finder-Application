@@ -84,9 +84,6 @@ public class MovieController {
         return "movie";
     }
 
-
-
-
     @GetMapping("/movies/{genre}")
     public String getMovieByGenre(@PathVariable String genre, Model model) {
         String genreName = genre.substring(0, 1).toUpperCase() + genre.substring(1).replace(" ", "");
@@ -95,5 +92,17 @@ public class MovieController {
         return "movie";
     }
 
+    @GetMapping("/admin/edit")
+    public String editMovie(Model model) {
+        List<Movie> movie = movieService.getMovieByTitle("The Girls");
+        model.addAttribute("movie", movie.get(0));
+        return "edit";
+    }
+
+    @PostMapping("/admin/edit")
+    public String updateMovie(@ModelAttribute("movie") Movie updatedMovie) throws IllegalAccessException {
+        movieService.editMovie(updatedMovie);
+        return "redirect:/";
+    }
 
 }
