@@ -1,7 +1,6 @@
 package com.example.movies.movie;
 
 
-import com.example.movies.genre.Genres;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;

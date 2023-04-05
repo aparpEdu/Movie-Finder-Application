@@ -20,17 +20,6 @@ public class MovieController {
     }
 
 
-
-
-
-
-    @GetMapping("/admin")
-    public String panel(Model model){
-        if(LogInHelper.getInstance().isAdmin()) {
-            return "admin";
-        }
-        return "login";
-    }
     @GetMapping("/admin/add")
     public String addMoviePage(Model model){
         if(LogInHelper.getInstance().isAdmin()) {
@@ -43,19 +32,6 @@ public class MovieController {
        movieService.addNewMovie(movie);
         return "add";
     }
-
-
-//    @GetMapping("/movies/title/{title}")
-//    public String getMoviesByTitle(Model model,@PathVariable  String title){
-//        List<Movie> movies = movieService.getMovieByTitle(title);
-//        model.addAttribute("movies", movies);
-//        return "movie";
-//    }
-
-
-
-
-
 
     @GetMapping("/admin/edit")
     public String editMovie(Model model) {

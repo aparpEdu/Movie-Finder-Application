@@ -1,6 +1,5 @@
 package com.example.movies.movie;
 
-import com.example.movies.genre.Genres;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -54,4 +53,10 @@ public class SearchController {
         model.addAttribute("movies", movies);
         return "movie";
     }
+    //    @GetMapping("/movies/title/{title}")
+//    public String getMoviesByTitle(Model model,@PathVariable  String title){
+//        List<Movie> movies = movieService.getMovieByTitle(title);
+//        model.addAttribute("movies", movies);
+//        return "movie";
+//    }
 }

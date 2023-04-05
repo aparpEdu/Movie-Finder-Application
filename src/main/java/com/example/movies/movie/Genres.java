@@ -1,4 +1,4 @@
-package com.example.movies.genre;
+package com.example.movies.movie;
 
 public enum Genres {
     Comedy,
