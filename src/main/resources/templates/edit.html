@@ -21,7 +21,7 @@
     <label for="genre">Genres:</label>
     <input type="text" id="genre" name="genre" th:value="${movie.genre}" required>
     <label for="description">Description:</label>
-    <textarea id="description" name="description" th:value="${movie.description}" required></textarea>
+    <textarea id="description" name="description" th:text="${movie.description}" required></textarea>
     <label for="length">Length:</label>
     <input type="text" id="length" name="length" th:value="${movie.length}" required>
     <label for="poster">Poster:</label>
