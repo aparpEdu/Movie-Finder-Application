@@ -1,11 +1,9 @@
 package com.example.movies.movie;
 
-import com.example.movies.genre.Genre;
 import jakarta.persistence.*;
 import lombok.Data;
+
 import java.net.URL;
-import java.util.HashSet;
-import java.util.Set;
 
 
 @Entity
@@ -20,15 +18,10 @@ public class Movie {
     @Column(name = "title")
     private String title;
 
-//    @Column(name = "genre")
+
 //    private Genre genre;
-    @ManyToMany
-    @JoinTable(
-        name = "movie_genre",
-        joinColumns = @JoinColumn(name = "movie_id"),
-        inverseJoinColumns = @JoinColumn(name = "genre_id")
-    )
-    private Set<Genre> genres = new HashSet<>();
+    @Column(name = "genre")
+    private String genre ;
     @Column(name = "actors")
     private String actors;
 
@@ -43,5 +36,8 @@ public class Movie {
 
     @Column(name = "length")
     private Integer length;
+
+    @Column(name ="director")
+    private String director;
 
 }

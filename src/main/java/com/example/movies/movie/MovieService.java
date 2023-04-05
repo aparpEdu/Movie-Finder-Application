@@ -1,8 +1,8 @@
 package com.example.movies.movie;
 
 
+import com.example.movies.genre.Genres;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -25,7 +25,21 @@ public class MovieService {
         }
         movieRepository.save(movie);
     }
+    @GetMapping
+    public List<Movie> getMovieByGenre(Genres genre){
+        return  movieRepository.findMoviesByGenreContains(genre);
 
+    }
+
+    @GetMapping
+    public List<Movie> getMovieByTitle(String title){
+//        return movieRepository.findMoviesByTitleContaining(title);
+        return movieRepository.findByTitleIgnoreCaseContaining(title);
+    }
+    @GetMapping
+    public List<Movie> getMoviesByYear(Integer year){
+        return  movieRepository.findMoviesByYear(year);
+    }
     @GetMapping
     public List<Movie> getAllMovies(){
         return movieRepository.findAll();

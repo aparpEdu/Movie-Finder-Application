@@ -37,6 +37,7 @@ a{
 }
 input[type="text"],
 input[type="number"],
+input[type="url"],
 textarea {
     padding: 10px;
     margin-bottom: 20px;
