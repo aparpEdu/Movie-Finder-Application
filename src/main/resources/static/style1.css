@@ -30,6 +30,7 @@ header {
     height: 25.5px;
     border: none;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 .search input[type="text"] {
@@ -271,7 +272,9 @@ span.Team-credits {
     font-style: normal;
     font-display: swap;
 }
-
+button{
+    cursor: pointer;
+}
 @font-face {
     font-family: 'oaks_future_V3';
     src: url('/fonts/oaks_future_V3-BoldRegular.eot');
