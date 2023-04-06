@@ -39,21 +39,23 @@
 <!--  </div>-->
 <!--</header>-->
 <div th:replace="fragments/header :: header"></div>
-<div class="container">
+<div class="page-title">
   <h1>Movie List</h1>
+</div>
+<div class="container movie-container">
   <div class="movie-list">
     <div class="movie-card" th:each="movie : ${movies}">
       <div class="poster">
         <img th:src="@{${movie.poster}}" alt="movie poster"/>
       </div>
       <div class="details">
-        <h2 th:text="${movie.title}">Movie Title</h2>
-        <p><strong>Genre:</strong> <span th:text="${movie.genre}">Action, Adventure, Sci-Fi</span></p>
-        <p><strong>Director:</strong> <span th:text="${movie.director}">Director Name</span></p>
-        <p><strong>Stars:</strong> <span th:text="${movie.actors}">Actor Name 1, Actor Name 2, Actor Name 3</span></p>
-        <p><strong>Release year:</strong> <span th:text="${movie.year}">2021</span></p>
-        <p><strong>Length:</strong> <span th:text="${movie.length}">120 min</span></p>
-        <p><strong>Description:</strong> <span th:text="${movie.description}">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</span></p>
+        <h2 class="movie-title" th:text="${movie.title}">Movie Title</h2>
+        <p class="movie-info"><strong>Genre:</strong> <span th:text="${movie.genre}">Action, Adventure, Sci-Fi</span></p>
+        <p class="movie-info"><strong>Director:</strong> <span th:text="${movie.director}">Director Name</span></p>
+        <p class="movie-info"><strong>Stars:</strong> <span th:text="${movie.actors}">Actor Name 1, Actor Name 2, Actor Name 3</span></p>
+        <p class="movie-info"><strong>Release year:</strong> <span th:text="${movie.year}">2021</span></p>
+        <p class="movie-info"><strong>Length:</strong> <span th:text="${movie.length}">120 min</span></p>
+        <p class="movie-description"><strong>Description:</strong> <span th:text="${movie.description}">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</span></p>
       </div>
     </div>
   </div>
