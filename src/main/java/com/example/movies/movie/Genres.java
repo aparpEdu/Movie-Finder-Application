@@ -1,4 +1,4 @@
-package com.example.movies.genre;
+package com.example.movies.movie;
 
 public enum Genres {
     Comedy,
@@ -15,7 +15,8 @@ public enum Genres {
     Fantasy,
     Documentary,
     SuperHero,
-    ActionComedy
+    ActionComedy,
+    ComedyRomance
 
 
 }
