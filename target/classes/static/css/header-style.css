@@ -21,6 +21,9 @@ header {
     align-items: center;
 }
 
+#selectedCategory option:hover {
+    cursor: pointer;
+}
 .search select {
     padding: 5px;
     margin-right: 5px;
@@ -28,6 +31,11 @@ header {
     height: 25.5px;
     border: none;
     border-radius: 20px;
+    cursor: pointer;
+}
+
+button{
+    cursor: pointer;
 }
 
 .search input[type="text"] {
