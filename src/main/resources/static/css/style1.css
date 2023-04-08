@@ -266,7 +266,7 @@ span.Team-credits {
     src: url('/fonts/oaks_future_V3-BoldRegular.eot');
     src: url('/fonts/oaks_future_V3-BoldRegular.eot?#iefix') format('embedded-opentype'),
     url('/fonts/oaks_future_V3-BoldRegular.woff2') format('woff2'),
-    url('/fonts/oaks_future_V3-BoldRegular.woff') format('woff'),
+    url('//fonts/oaks_future_V3-BoldRegular.woff') format('woff'),
     url('/fonts/oaks_future_V3-BoldRegular.svg#oaks_future_V3-BoldRegular') format('svg');
     font-weight: bold;
     font-style: normal;
