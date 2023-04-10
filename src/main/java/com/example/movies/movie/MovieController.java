@@ -35,8 +35,9 @@ public class MovieController {
 
     @GetMapping("/admin/edit")
     public String editMovie(Model model) {
-        List<Movie> movie = movieService.getMovieByTitle("The Girls");
-        model.addAttribute("movie", movie.get(0));
+        List<Movie> movies = movieService.getAllMovies();
+        model.addAttribute("movie", movies.get(0));
+        model.addAttribute("movies", movies);
         return "edit";
     }
 
