@@ -1,37 +1,4 @@
-# IntelliJ IDEA
-.idea/
-
-# Eclipse
+*.class
+target
 .classpath
-.project
-.settings/
-
-# Compiled class files
-bin/
-target/
-
-# Maven
-log/
-logs/
-*.log
-maven.log
-release.properties
-dependency-reduced-pom.xml
-buildNumber.properties
-.checkstyle
-cobertura.ser
-*.jar.original
-
-# Gradle
-build/
-.gradle/
-gradlew
-gradlew.bat
-out/
-
-# Thymeleaf
-*.iml
-
-# OS generated files
-.DS_Store
-Thumbs.db
+.settings
