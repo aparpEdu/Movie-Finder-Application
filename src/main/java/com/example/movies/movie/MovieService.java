@@ -24,6 +24,10 @@ public class MovieService {
         }
         movieRepository.save(movie);
     }
+
+    public void deleteMovie(Movie movie) throws IllegalAccessException {
+        movieRepository.delete(movie);
+    }
     @GetMapping
     public List<Movie> getMovieByGenre(Genres genre){
         return  movieRepository.findMoviesByGenreContains(genre);

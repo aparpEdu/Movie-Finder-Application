@@ -47,28 +47,22 @@
       <input type="submit" value="Edit Movie">
     </form>
   </div>
-  <script th:inline="javascript">
-    /*<![CDATA[*/
-    var movies = [[${movies}]];
-    function updateMovieDetails() {
-      var movieId = document.getElementById("movie").value;
-      var movie = movies.find(m => m.id == movieId);
-      document.getElementById("title").value = movie.title;
-      document.getElementById("actors").value = movie.actors;
-      document.getElementById("movie_year").value = movie.year;
-      document.getElementById("genre").value = movie.genre;
-      document.getElementById("description").value = movie.description;
-      document.getElementById("length").value = movie.length;
-      document.getElementById("poster").value = movie.poster;
-      document.getElementById("director").value = movie.director;
-    }
-    /*]]>*/
-  </script>
   </div>
-
-  <div id="delete" class="tab-content">
-    dasdada
-  </div>
+<div id="delete" class="tab-content">
+  <h1>Choose which movie to remove</h1>
+  <form action="/admin/delete" method="post">
+    <div class="select">
+      <select  id="movieToDelete" name="movie" onchange="updateMovieDetailsToRemove()">
+        <option th:each="movie : ${movies}"
+                th:value="${movie.id}"
+                th:text="${movie.title}"
+        >
+        </option>
+      </select>
+    </div>
+    <input type="submit" class="button" value="Delete Movie">
+  </form>
+</div>
 
 <script>function openTab(tabName) {
 var i, tabContent, tabLinks;
@@ -83,6 +77,31 @@ tabLinks[i].classList.remove("active");
 document.getElementById(tabName).classList.add("active");
 event.currentTarget.classList.add("active");
 }
+</script>
+<script th:inline="javascript">
+  /*<![CDATA[*/
+  var movies = [[${movies}]];
+  function updateMovieDetails() {
+    var movieId = document.getElementById("movie").value;
+    var movie = movies.find(m => m.id == movieId);
+    document.getElementById("title").value = movie.title;
+    document.getElementById("actors").value = movie.actors;
+    document.getElementById("movie_year").value = movie.year;
+    document.getElementById("genre").value = movie.genre;
+    document.getElementById("description").value = movie.description;
+    document.getElementById("length").value = movie.length;
+    document.getElementById("poster").value = movie.poster;
+    document.getElementById("director").value = movie.director;
+  }
+
+  function updateMovieDetailsToRemove() {
+    var movieId = document.getElementById("movieToDelete").value;
+    var movie = movies.find(m => m.id == movieId);
+    document.getElementById("removeTitle").value = movie.title;
+    document.getElementById("image").value = movie.poster;
+  }
+
+  /*]]>*/
 </script>
 </body>
 </html>

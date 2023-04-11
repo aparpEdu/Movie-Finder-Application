@@ -51,4 +51,12 @@ public class MovieController {
         return "redirect:/";
     }
 
+    @PostMapping("/admin/delete")
+    public String deleteMovie(@ModelAttribute("movie") Movie movieToBeDeleted) throws IllegalAccessException {
+        System.out.println(movieToBeDeleted);
+        movieService.deleteMovie(movieToBeDeleted);
+        return "redirect:/";
+    }
+
+
 }
