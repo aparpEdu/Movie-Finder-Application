@@ -51,7 +51,7 @@
 <div id="delete" class="tab-content">
   <h1>Choose which movie to remove</h1>
   <form action="/admin/delete" method="post">
-    <div class="select">
+    <div class="select2">
       <select  id="movieToDelete" name="movie" onchange="updateMovieDetailsToRemove()">
         <option th:each="movie : ${movies}"
                 th:value="${movie.id}"

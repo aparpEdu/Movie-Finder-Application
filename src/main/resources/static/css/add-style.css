@@ -96,6 +96,16 @@ select::-ms-expand {
     overflow: hidden;
     padding-bottom: 20px;
 }
+.select2 {
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: 3em;
+    border-radius: .25em;
+    overflow: hidden;
+    padding-bottom: 20px;
+    margin: auto;
+}
 /* Arrow */
 .select::after {
     content: '\25BC';
