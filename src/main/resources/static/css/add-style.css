@@ -51,7 +51,7 @@ input[type="submit"] {
     padding: 10px;
     border-radius: 5px;
     border: none;
-    background-color: burlywood;
+    background-color: #f6733a;
     color: #fff;
     cursor: pointer;
     font-size: 25px;
@@ -60,7 +60,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #ff980b;
+    background-color: #b6532d;
 }
 
 :root {
@@ -102,11 +102,11 @@ select::-ms-expand {
     top: 0;
     right: 0;
     padding: 15px;
-    background-color: burlywood;
+    background-color: #f6733a;
     transition: .25s all ease;
     pointer-events: none;
 }
 /* Transition */
 .select:hover::after {
-    color: #f39c12;
+    color: burlywood;
 }
