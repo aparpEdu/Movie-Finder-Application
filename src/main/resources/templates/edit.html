@@ -12,13 +12,15 @@
   <h1>Movie Details</h1>
   <form method="post">
     <label for="movie">Select a movie:</label>
-    <select id="movie" name="movie" onchange="updateMovieDetails()">
+    <div class="select">
+    <select  id="movie" name="movie" onchange="updateMovieDetails()">
       <option th:each="movie : ${movies}"
               th:value="${movie.id}"
               th:text="${movie.title}"
       >
       </option>
     </select>
+    </div>
     <label for="title">Title:</label>
     <input type="text" id="title" name="title" th:value="${movie.title}" required>
     <label for="actors">Actors:</label>
