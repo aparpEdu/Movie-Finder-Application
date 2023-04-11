@@ -29,6 +29,7 @@ form {
 
 label {
     margin-bottom: 10px;
+    padding-top: 20px
 }
 a{
     display: block;
@@ -109,4 +110,39 @@ select::-ms-expand {
 /* Transition */
 .select:hover::after {
     color: burlywood;
+}
+.tabs {
+    display: flex;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid orange;
+}
+
+.tab {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin-right: 12px;
+    cursor: pointer;
+    font-size: 18px;
+
+}
+
+.tab.active {
+    background-color: #f6733a;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+.edit-delete-buttons-container {
+    display: flex;
+    justify-content: space-between;
+
+    border-bottom: 2px solid orange;
 }
