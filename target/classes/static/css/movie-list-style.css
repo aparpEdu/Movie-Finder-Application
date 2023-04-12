@@ -18,6 +18,7 @@
     color: black;
 }
 
+
 .topnav a.active {
     background-color: #4CAF50;
     color: white;
@@ -183,5 +184,26 @@ body {
 /*    padding-left: 40px;*/
 /*    padding-right: 40px;*/
 /*}*/
+.movie-card img {
+    object-fit: cover;
+}
 
+.page-title {
+    color: #555555;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 
+.movie-container {
+    max-width: fit-content !important;
+}
+
+p.movie-description {
+    font-size: 12px;
+    color: grey;
+}
+
+.movie-title {
+    color: burlywood;
+}
