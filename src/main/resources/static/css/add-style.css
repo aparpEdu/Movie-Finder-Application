@@ -121,6 +121,22 @@ select::-ms-expand {
 .select:hover::after {
     color: burlywood;
 }
+
+.select2::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 15px;
+    background-color: #f6733a;
+    transition: .25s all ease;
+    pointer-events: none;
+}
+/* Transition */
+.select2:hover::after {
+    color: burlywood;
+}
+
 .tabs {
     display: flex;
     margin-top: 20px;
