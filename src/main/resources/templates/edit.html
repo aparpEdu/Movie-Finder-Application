@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html" lang="en">
 <head>
   <title>Edit Movie</title>
   <link rel="stylesheet" type="text/css" th:href="@{/css/add-style.css}">
@@ -12,12 +12,17 @@
 
 <div class="container">
   <h1>Movie Details</h1>
+
   <div class="tabs">
-    <button class="tab active" onclick="openTab('edit')">Edit</button>
+    <button class="tab active" onclick="openTab('add')">Add</button>
+    <button class="tab " onclick="openTab('edit')">Edit</button>
     <button class="tab" onclick="openTab('delete')">Delete</button>
   </div>
-
-  <div id="edit" class="tab-content active">
+  <div id="add" class="tab-content active">
+    <!--  <div th:replace="fragments/add :: edit"></div>-->
+ 
+  </div>
+  <div id="edit" class="tab-content ">
     <form method="post">
       <label for="movie">Select a movie:</label>
       <div class="select">
@@ -64,6 +69,8 @@
     <input type="submit" class="button" value="Delete Movie">
   </form>
 </div>
+
+
 
 <script>function openTab(tabName) {
 var i, tabContent, tabLinks;
