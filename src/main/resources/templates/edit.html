@@ -35,21 +35,21 @@
         </select>
       </div>
       <label for="title">Title:</label>
-      <input type="text" id="title" name="title" th:value="${movie.title}" required>
+      <input type="text" id="title" name="title" th:value="${movie?.title}" required>
       <label for="actors">Actors:</label>
-      <input type="text" id="actors" name="actors" th:value="${movie.actors}" required>
+      <input type="text" id="actors" name="actors" th:value="${movie?.actors}" required>
       <label for="movie_year">Year:</label>
-      <input type="number" id="movie_year" name="year" th:value="${movie.year}" required>
+      <input type="number" id="movie_year" name="year" th:value="${movie?.year}" required>
       <label for="genre">Genres:</label>
-      <input type="text" id="genre" name="genre" th:value="${movie.genre}" required>
+      <input type="text" id="genre" name="genre" th:value="${movie?.genre}" required>
       <label for="description">Description:</label>
-      <textarea id="description" name="description" th:text="${movie.description}" required></textarea>
+      <textarea id="description" name="description" th:text="${movie?.description}" required></textarea>
       <label for="length">Length:</label>
-      <input type="text" id="length" name="length" th:value="${movie.length}" required>
+      <input type="text" id="length" name="length" th:value="${movie?.length}" required>
       <label for="poster">Poster:</label>
-      <input type="url" id="poster" name="poster" th:value="${movie.poster}" required>
+      <input type="url" id="poster" name="poster" th:value="${movie?.poster}" required>
       <label for="director">Director:</label>
-      <input type="text" id="director" name="director" th:value="${movie.director}" required>
+      <input type="text" id="director" name="director" th:value="${movie?.director}" required>
       <input type="submit" value="Edit Movie">
     </form>
   </div>

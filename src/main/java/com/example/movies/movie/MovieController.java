@@ -39,23 +39,26 @@ public class MovieController {
         if(!LogInHelper.getInstance().isAdmin()){
             return "login";
         }
-        List<Movie> movies = movieService.getAllMovies();
-        model.addAttribute("movie", movies.get(0));
-        model.addAttribute("movies", movies);
+        if (!movieService.getAllMovies().isEmpty()) {
+            List<Movie> movies = movieService.getAllMovies();
+            model.addAttribute("movie", movies.get(0));
+            model.addAttribute("movies", movies);
+            return "edit";
+        }
         return "edit";
     }
 
     @PostMapping("/admin/edit")
     public String updateMovie(@ModelAttribute("movie") Movie updatedMovie) throws IllegalAccessException {
         movieService.editMovie(updatedMovie);
-        return "redirect:/";
+        return "redirect:/movies";
     }
 
     @PostMapping("/admin/delete")
     public String deleteMovie(@ModelAttribute("movie") Movie movieToBeDeleted) throws IllegalAccessException {
         System.out.println(movieToBeDeleted);
         movieService.deleteMovie(movieToBeDeleted);
-        return "redirect:/";
+        return "redirect:/movies";
     }
 
 
