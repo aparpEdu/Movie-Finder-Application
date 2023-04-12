@@ -1,6 +1,7 @@
 package com.example.movies.movie;
 
 import com.example.movies.authorization.LogInHelper;
+import lombok.extern.java.Log;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,8 +36,12 @@ public class MovieController {
 
     @GetMapping("/admin/edit")
     public String editMovie(Model model) {
-        List<Movie> movie = movieService.getMovieByTitle("The Girls");
-        model.addAttribute("movie", movie.get(0));
+        if(!LogInHelper.getInstance().isAdmin()){
+            return "login";
+        }
+        List<Movie> movies = movieService.getAllMovies();
+        model.addAttribute("movie", movies.get(0));
+        model.addAttribute("movies", movies);
         return "edit";
     }
 
@@ -45,5 +50,13 @@ public class MovieController {
         movieService.editMovie(updatedMovie);
         return "redirect:/";
     }
+
+    @PostMapping("/admin/delete")
+    public String deleteMovie(@ModelAttribute("movie") Movie movieToBeDeleted) throws IllegalAccessException {
+        System.out.println(movieToBeDeleted);
+        movieService.deleteMovie(movieToBeDeleted);
+        return "redirect:/";
+    }
+
 
 }

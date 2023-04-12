@@ -189,7 +189,8 @@ body {
 }
 
 .page-title {
-    color: #555555;
+    /*color: #555555;*/
+    color:black;
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;

@@ -37,14 +37,14 @@ li {
 li a {
     padding: 10px;
     border-radius: 5px;
-    background-color: #ff5c5c;
+    background-color: #f6733a;
     color: #fff;
     text-decoration: none;
     display: block;
 }
 
 a:hover {
-    background-color: #ff4444;
+    background-color: #b6532d;
 }
 .menu-container {
     list-style: none;

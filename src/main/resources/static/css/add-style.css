@@ -29,6 +29,7 @@ form {
 
 label {
     margin-bottom: 10px;
+    padding-top: 20px
 }
 a{
     display: block;
@@ -51,7 +52,7 @@ input[type="submit"] {
     padding: 10px;
     border-radius: 5px;
     border: none;
-    background-color: #ff5c5c;
+    background-color: #f6733a;
     color: #fff;
     cursor: pointer;
     font-size: 25px;
@@ -60,5 +61,114 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #ff4444;
+    background-color: #b6532d;
+}
+
+:root {
+    --darkgray: #333;
+}
+
+select {
+    /* Reset Select */
+    appearance: none;
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+    /* Personalize */
+    flex: 1;
+    padding: 0 1em;
+    color: #fff;
+    background-color: var(--darkgray);
+    background-image: none;
+    cursor: pointer;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+    display: none;
+}
+/* Custom Select wrapper */
+.select {
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: 3em;
+    border-radius: .25em;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+.select2 {
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: 3em;
+    border-radius: .25em;
+    overflow: hidden;
+    padding-bottom: 20px;
+    margin: auto;
+}
+/* Arrow */
+.select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 15px;
+    background-color: #f6733a;
+    transition: .25s all ease;
+    pointer-events: none;
+}
+/* Transition */
+.select:hover::after {
+    color: burlywood;
+}
+
+.select2::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 15px;
+    background-color: #f6733a;
+    transition: .25s all ease;
+    pointer-events: none;
+}
+/* Transition */
+.select2:hover::after {
+    color: burlywood;
+}
+
+.tabs {
+    display: flex;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid orange;
+}
+
+.tab {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin-right: 12px;
+    cursor: pointer;
+    font-size: 18px;
+
+}
+
+.tab.active {
+    background-color: #f6733a;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+.edit-delete-buttons-container {
+    display: flex;
+    justify-content: space-between;
+
+    border-bottom: 2px solid orange;
 }
