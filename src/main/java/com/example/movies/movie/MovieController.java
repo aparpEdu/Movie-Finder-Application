@@ -21,17 +21,17 @@ public class MovieController {
     }
 
 
-    @GetMapping("/admin/add")
-    public String addMoviePage(Model model){
-        if(LogInHelper.getInstance().isAdmin()) {
-            return "add";
-        }
-        return "login";
-    }
+//    @GetMapping("/admin/add")
+//    public String addMoviePage(Model model){
+//        if(LogInHelper.getInstance().isAdmin()) {
+//            return "add";
+//        }
+//        return "login";
+//    }
     @PostMapping ("/admin/add")
     public String addMovie(@ModelAttribute("movie") Movie movie,Model model) throws IllegalAccessException {
        movieService.addNewMovie(movie);
-        return "add";
+        return "redirect:/movies";
     }
 
     @GetMapping("/admin/edit")
