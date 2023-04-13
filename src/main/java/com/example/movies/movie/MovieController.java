@@ -31,7 +31,7 @@ public class MovieController {
     @PostMapping ("/admin/add")
     public String addMovie(@ModelAttribute("movie") Movie movie,Model model) throws IllegalAccessException {
        movieService.addNewMovie(movie);
-        return "redirect:/movies";
+        return "redirect:/admin/edit";
     }
 
     @GetMapping("/admin/edit")
@@ -51,14 +51,14 @@ public class MovieController {
     @PostMapping("/admin/edit")
     public String updateMovie(@ModelAttribute("movie") Movie updatedMovie) throws IllegalAccessException {
         movieService.editMovie(updatedMovie);
-        return "redirect:/movies";
+        return "redirect:/admin/edit";
     }
 
     @PostMapping("/admin/delete")
     public String deleteMovie(@ModelAttribute("movie") Movie movieToBeDeleted) throws IllegalAccessException {
         System.out.println(movieToBeDeleted);
         movieService.deleteMovie(movieToBeDeleted);
-        return "redirect:/movies";
+        return "redirect:/admin/edit";
     }
 
 
