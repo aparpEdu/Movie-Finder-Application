@@ -18,28 +18,29 @@
     <button class="tab " onclick="openTab('edit')">Edit</button>
     <button class="tab" onclick="openTab('delete')">Delete</button>
   </div>
-  <div id="add" class="tab-content active">
-    <form  action="/admin/add" th:object="${movie}" method="post">
-      <label for="title">Title:</label>
-      <input type="text" id="titles" name="title"  required>
-      <label for="actors">Actors:</label>
-      <input type="text" id="stars" name="actors"  required>
-      <label for="movie_year">Year:</label>
-      <input type="number" id="movieYear" name="year"  required>
-      <label for="genre">Genres:</label>
-      <input type="text" id="genres" name="genre"  required>
-      <label for="description">Description:</label>
-      <textarea id="descr" name="description"  required></textarea>
-      <label for="length">Length:</label>
-      <input type="text" id="movLength" name="length"  required>
-      <label for="poster">Poster:</label>
-      <input type="url" id="posterLink" name="poster"  required>
-      <label for="director">Director:</label>
-      <input type="text" id="directors" name="director"  required>
-      <input type="submit" value="Add Movie">
-    </form>
- 
-  </div>
+<!--  <div id="add" class="tab-content active">-->
+<!--    <form  action="/admin/add" th:object="${movie}" method="post">-->
+<!--      <label for="title">Title:</label>-->
+<!--      <input type="text" id="titles" name="title"  required>-->
+<!--      <label for="actors">Actors:</label>-->
+<!--      <input type="text" id="stars" name="actors"  required>-->
+<!--      <label for="movie_year">Year:</label>-->
+<!--      <input type="number" id="movieYear" name="year"  required>-->
+<!--      <label for="genre">Genres:</label>-->
+<!--      <input type="text" id="genres" name="genre"  required>-->
+<!--      <label for="description">Description:</label>-->
+<!--      <textarea id="descr" name="description"  required></textarea>-->
+<!--      <label for="length">Length:</label>-->
+<!--      <input type="text" id="movLength" name="length"  required>-->
+<!--      <label for="poster">Poster:</label>-->
+<!--      <input type="url" id="posterLink" name="poster"  required>-->
+<!--      <label for="director">Director:</label>-->
+<!--      <input type="text" id="directors" name="director"  required>-->
+<!--      <input type="submit" value="Add Movie">-->
+<!--    </form>-->
+<!--  -->
+<!--  </div>-->
+  <div th:replace="fragments/add-movie-form :: #add"></div>
   <div id="edit" class="tab-content ">
     <form method="post">
       <label for="movie">Select a movie:</label>
